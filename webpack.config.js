@@ -8,7 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 let config = {
   mode: process.env.NODE_ENV,
   devtool: false,
-  entry: './src/index.js',
+  entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: 'index.js',
@@ -17,7 +17,7 @@ let config = {
   },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' }
+      { test: /\.(js|ts)$/, exclude: /node_modules/, use: 'babel-loader' }
     ]
   },
   devServer: {
@@ -35,7 +35,10 @@ let config = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "demo", "demo-constraint.html"),
     })
-  ]
+  ],
+  externals: {
+    cytoscape: 'cytoscape'
+  }
 };
 
 module.exports = config;
