@@ -4,9 +4,7 @@
   "main": "cytoscape-fcose.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
-    "build:min": "cross-env NODE_ENV=production MIN=true webpack",
-    "build:release": "run-s build copyright",
-    "dev": "webpack-dev-server --open"
+    "dev": "cross-env NODE_ENV=development webpack serve"
   },
   "keywords": [
     "cytoscape",
@@ -18,10 +16,12 @@
     "babel-preset-env": "^1.5.1",
     "camelcase": "^6.2.0",
     "chai": "4.0.2",
+    "copy-webpack-plugin": "^11.0.0",
     "cpy-cli": "^3.1.1",
     "cross-env": "^7.0.3",
     "eslint": "^7.26.0",
     "gh-pages": "^1.0.0",
+    "html-webpack-plugin": "^5.6.0",
     "mocha": "8.4.0",
     "npm-run-all": "^4.1.2",
     "rimraf": "^3.0.2",

@@ -1,0 +1,2 @@
+/*! For license information please see index.js.LICENSE.txt */
+!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.cytoscapeStyle=t():e.cytoscapeStyle=t()}(self,(()=>(()=>{"use strict";var e={"./src/index.js":e=>{e.exports=function(e){}}},t={};return function o(r){var s=t[r];if(void 0!==s)return s.exports;var n=t[r]={exports:{}};return e[r](n,n.exports,o),n.exports}("./src/index.js")})()));
