@@ -1,22 +1,17 @@
 const path = require('path');
 const pkg = require('./package.json');
 const camelcase = require('camelcase');
-const process = require('process');
-const webpack = require('webpack');
-const env = process.env;
-const NODE_ENV = env.NODE_ENV;
-const MIN = env.MIN;
-const PROD = NODE_ENV === 'production';
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let config = {
-  devtool: PROD ? false : 'inline-source-map',
+  move: "production",
+  devtool: false,
   entry: './src/index.js',
   output: {
-    path: path.join( __dirname ),
-    filename: pkg.name + '.js',
-    library: camelcase( pkg.name ),
+    path: path.resolve(__dirname, "dist"),
+    filename: 'index.js',
+    library: camelcase(pkg.name),
     libraryTarget: 'umd',
-    globalObject: 'this'
   },
   module: {
     rules: [
@@ -24,16 +19,13 @@ let config = {
     ]
   },
   optimization: {
-    minimize: MIN ? true : false,
+    minimize: true,
   },
-  externals: PROD ? { 
-    'cose-base': {
-      commonjs2: 'cose-base',
-      commonjs: 'cose-base',
-      amd: 'cose-base',
-      root: 'coseBase'
-    } 
-  } : {}
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Custom template',
+    })
+  ]
 };
 
 module.exports = config;
