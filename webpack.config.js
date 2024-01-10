@@ -17,7 +17,15 @@ let config = {
   },
   module: {
     rules: [
-      { test: /\.(js|ts)$/, exclude: /node_modules/, use: 'babel-loader' }
+      {
+        test: /\.ts$/, exclude: /node_modules/, loader: 'ts-loader',
+        options: {
+          compilerOptions: {
+            declaration: true,
+            outDir: path.resolve(__dirname, 'dist', 'types'), // 指定声明文件输出目录
+          },
+        },
+      }
     ]
   },
   devServer: {
