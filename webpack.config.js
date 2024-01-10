@@ -4,6 +4,7 @@ const process = require('process');
 const camelcase = require('camelcase');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 let config = {
   mode: process.env.NODE_ENV,
@@ -32,6 +33,7 @@ let config = {
     port: 8000,
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
         {

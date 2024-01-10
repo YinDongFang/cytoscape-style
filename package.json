@@ -1,6 +1,6 @@
 {
   "name": "cytoscape-pkgs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "cytoscape-fcose.js",
   "files": [
     "dist/index.js",
@@ -16,6 +16,7 @@
   ],
   "devDependencies": {
     "camelcase": "^6.2.0",
+    "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "cross-env": "^7.0.3",
     "html-webpack-plugin": "^5.6.0",
