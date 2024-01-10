@@ -1,6 +1,6 @@
 {
-  "name": "cytoscape-pkgs",
-  "version": "0.0.2",
+  "name": "cytoscape-instance",
+  "version": "1.0.0",
   "main": "cytoscape-fcose.js",
   "files": [
     "dist/index.js",
