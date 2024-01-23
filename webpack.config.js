@@ -16,6 +16,9 @@ let config = {
     library: camelcase(pkg.name),
     libraryTarget: 'umd',
   },
+  resolve: {
+    extensions: ['.js', '.ts'],
+  },
   module: {
     rules: [
       {

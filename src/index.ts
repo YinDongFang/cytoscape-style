@@ -1,3 +1,9 @@
-import cytoscape from 'cytoscape';
+import { createSingleInstanceExtension, overrideStyleFunction } from "./utils";
 
-export default cytoscape({ styleEnabled: true });
+export default function (cytoscape) {
+  overrideStyleFunction('register', () => {
+    return function (name: string, initialStyle: cytoscape.StylesheetStyle[]) {
+      
+    }
+  });
+}
